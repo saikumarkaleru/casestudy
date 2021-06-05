@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intrusion Detection System</title> <title>Login</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="/predict" method="post">
+        <p>
+            <label for="duration">duration</label>
+            <input name="duration" type="number">
+            
+        </p>
+        <div class="row input-field">
+            <label for="protocol_type">protocol_type</label>
+            <input name="protocol_type" type="text">
+           
+        </div>
+        <div class="row input-field">
+            <input name="flag" type="text">
+            <label for="flag">flag</label>
+        </div>
+        <div class="row input-field">
+            <input name="src_bytes" type="number">
+            <label for="src_bytes">src_bytes</label>
+        </div>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+
+</body>
+</html>
